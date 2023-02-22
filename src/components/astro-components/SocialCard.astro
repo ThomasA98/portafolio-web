@@ -1,0 +1,10 @@
+---
+interface Props {
+    socialNetwork: string
+    href: string
+}
+
+const { socialNetwork, href } = Astro.props
+---
+
+<li><a href={ href }>{ socialNetwork }</a></li>
