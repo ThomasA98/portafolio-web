@@ -1,4 +1,4 @@
-import { Component, createSignal } from "solid-js";
+import type { Component} from "solid-js";
 
 import './RepoCard.css';
 
@@ -15,11 +15,11 @@ interface RepoCardProps {
 
 export const RepoCard: Component<RepoCardProps> = (props) => {
 
-    const [ getLanguage, setLanguage ] = createSignal({});
+    /* const [ getLanguage, setLanguage ] = createSignal({});
 
     fetch(props.languages_url)
-    .then(res => res.json())
-    .then(data => setLanguage(data));
+        .then(res => res.json())
+        .then(data => setLanguage(data)); */
 
     return <div class="repo-card">
         {/* <p>ID{ props.id }</p> */}
@@ -33,10 +33,10 @@ export const RepoCard: Component<RepoCardProps> = (props) => {
                 Object.keys(getLanguage()).map(language => <li>{ language }</li>)
             }</ul> */}
             {/* <p>contents_url { props.contents_url }</p> */}
-            <a class="repo-card-ref" href={ props.html_url } target="_blank">go to repository</a>
         </div>
-        <div class="repo-card-container">
+        <div class="repo-card-footer">
             <img class="repo-card-principal-lang-img" src={ props.language } />
+            <a class="repo-card-ref" href={ props.html_url } target="_blank">go to repository</a>
         </div>
     </div>
 };

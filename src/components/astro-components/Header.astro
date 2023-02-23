@@ -1,17 +1,68 @@
 ---
 import SocialCard from "./SocialCard.astro";
+
+interface Props {
+    name: string
+}
+
+const { name } = Astro.props;
 ---
 
 <header>
-    <div>
-        <h1>Tamiel</h1>
+    <div class="owner-container">
+        <h1 class="title-name">{ name }</h1>
+        <p class="owner-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, unde modi. Earum facilis, molestiae sed, laboriosam dolorem libero alias suscipit, eveniet in iusto quibusdam qui. Labore veniam aut illo corporis.</p>
     </div>
-    <div>
-        <h2>Social Networks</h2>
-        <ul>
+    <div class="social-netwoks-container">
+        <div class="cards-social-networks">
             <SocialCard href={ 'https://www.google.com' } socialNetwork="github"/>
             <SocialCard href={ 'https://www.google.com' } socialNetwork="linkedin"/>
             <SocialCard href={ 'https://www.google.com' } socialNetwork="twitter"/>
-        </ul>
+        </div>
     </div>
 </header>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        display: flex;
+        margin: 2rem;
+        margin-bottom: 4rem;
+        padding: 2rem;
+        gap: 2rem;
+        background-color: #222;
+    }
+
+    .owner-container {
+        width: 50%;
+    }
+
+    .title-name {
+        color: white;
+        font-size: 4rem;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .owner-description {
+        margin-top: 2rem;
+        width: 100%;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 1rem;
+        color: #817f7f;
+        text-align: justify;
+    }
+
+    .social-netwoks-container {
+        width: 50%;
+    }
+
+    .cards-social-networks {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+</style>

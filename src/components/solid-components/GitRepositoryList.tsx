@@ -22,7 +22,6 @@ export const GitRepositoryList = (props: Props) => {
     return (
         <section class="container">{
             getRepositories().map((repo) => <RepoCard {...repo} />)
-        }
-        </section>
+        }</section>
     );
 };

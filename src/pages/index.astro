@@ -4,10 +4,11 @@ import { GitRepositoryList } from "../components/solid-components/GitRepositoryL
 import Layout from "../layout/Layout.astro";
 
 const githubUser = 'Tamiel';
+const nameOwner = 'El Terrible Nombre Fake';
 ---
 
-<Layout title="Tamiel">
-	<Header />
+<Layout title={ nameOwner }>
+	<Header name={ nameOwner } />
 	<GitRepositoryList gitUser={ githubUser } client:load />
 </Layout>
 
