@@ -1,4 +1,4 @@
-import { createSignal } from "solid-js";
+import { createSignal, For } from "solid-js";
 import { repositoryAdapter } from "../../adapter/RepositoryAdapter";
 import type { Repository } from "../../model/Repository";
 import { RepoCard } from "./RepoCard";
@@ -20,8 +20,21 @@ export const GitRepositoryList = (props: Props) => {
     })
 
     return (
-        <section class="container">{
-            getRepositories().map((repo) => <RepoCard {...repo} />)
-        }</section>
+        <section class="container-repositories">{
+          <For each={ getRepositories() } >
+            {(repo) => <RepoCard {...repo} />}
+          </For>
+        }
+        {
+          <For each={ getRepositories() } >
+            {(repo) => <RepoCard {...repo} />}
+          </For>
+        }
+        {
+          <For each={ getRepositories() } >
+            {(repo) => <RepoCard {...repo} />}
+          </For>
+        }
+        </section>
     );
 };

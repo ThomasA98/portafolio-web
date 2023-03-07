@@ -28,7 +28,7 @@ export const RepoCard: Component<RepoCardProps> = (props) => {
 
         <div class="repo-card-container">
             <p class="repo-card-description">{ props.description ?? 'No description available for this repository'}</p>
-            <h4>Languages Proyect:</h4>
+            {/* <h4>Languages Proyect:</h4> */}
             {/* esto esta comentado de momento para optimizar las peticiones  <ul>{
                 Object.keys(getLanguage()).map(language => <li>{ language }</li>)
             }</ul> */}

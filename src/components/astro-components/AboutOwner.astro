@@ -1,0 +1,31 @@
+---
+interface Props {
+    name: string
+    about: string
+}
+
+const { name, about } = Astro.props;
+---
+
+<div class="owner-container">
+    <h1 class="title-name">{ name }</h1>
+    <p class="owner-description">{ about }</p>
+</div>
+
+<style>
+    .owner-container {
+    }
+
+    .title-name {
+        color: white;
+        font-size: 4rem;
+    }
+
+    .owner-description {
+        margin-top: 2rem;
+        width: 100%;
+        font-size: 1.5rem;
+        color: #817f7f;
+        text-align: justify;
+    }
+</style>

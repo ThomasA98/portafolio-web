@@ -1,0 +1,98 @@
+---
+interface Props {
+    nameOwner: string;
+}
+
+const { nameOwner } = Astro.props;
+---
+
+<script>
+    const hiddenWelcomeButton = document.getElementById('hiddenWelcomeButton');
+    const welcomeDiv = document.getElementById('welcome');
+
+    if (sessionStorage.getItem('hiddenWelcome')) {
+        if (welcomeDiv) {
+            welcomeDiv.style.height = '0px';
+            welcomeDiv.style.opacity = '0';
+            welcomeDiv.style.zIndex = '-1';
+        }
+    };
+
+    if (hiddenWelcomeButton) hiddenWelcomeButton.addEventListener('click', () => {
+        if (welcomeDiv) {
+            sessionStorage.setItem('hiddenWelcome', 'true');
+            welcomeDiv.style.height = '0px';
+            welcomeDiv.style.opacity = '0';
+            welcomeDiv.style.zIndex = '-1';
+        }
+    });
+</script>
+
+<div id="welcome">
+    <div class="welcome-container">
+        <img src="/image/docker.svg" alt="welcome" />
+        <h2>Welcome</h2>
+    </div>
+    <p>Welcome to {nameOwner}</p>
+    <button id="hiddenWelcomeButton">Go!!</button>
+</div>
+
+<style>
+    #welcome {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 110%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #222;
+        z-index: 100;
+    }
+
+    .welcome-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 33%;
+    }
+
+    #welcome img {
+        width: 200px;
+    }
+
+    #welcome h2 {
+        font-size: 3rem;
+        color: #5ae1eb;
+    }
+
+    #welcome p {
+        text-align: center;
+        font-size: 2rem;
+        color: white
+    }
+
+    #welcome button {
+        width: 15%;
+        min-width: 150px;
+        margin: 1rem;
+        padding: 0.5rem;
+        font-size: 2.5rem;
+        background-color: #a00ea0;
+        color: white;
+        border: 1px solid #a00ea0;
+        border-radius: 3px;
+        cursor: pointer;
+        box-shadow: 0px 0px 3rem #a00ea0;
+        text-shadow: 0px 0px 1rem #5ae1eb;
+        transition: 300ms;
+    }
+
+    #welcome button:hover {
+        box-shadow: 0px 0px 7rem #a00ea0;
+        text-shadow: 0px 0px 3rem #5ae1eb;
+    }
+</style>

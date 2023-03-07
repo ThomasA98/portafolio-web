@@ -1,0 +1,23 @@
+---
+interface Props {
+    level: number
+    levelDescription: string
+}
+
+const { level, levelDescription } = Astro.props
+---
+
+<div>
+    <img
+		class="icon"
+		src={ `/image/level_${ level }.svg` }
+		alt={`level_${ level }`}/>
+		<p>{ levelDescription }</p>
+</div>
+
+
+<style>
+	.icon {
+		width: 10rem;
+	}
+</style>

@@ -1,0 +1,32 @@
+---
+import SocialCard from "./SocialCard.astro";
+
+---
+
+<div class="social-netwoks-container">
+    <div class="cards-social-networks">
+        <SocialCard href={ 'https://www.google.com' } socialNetwork="github"/>
+        <SocialCard href={ 'https://www.google.com' } socialNetwork="linkedin"/>
+        <SocialCard href={ 'https://www.google.com' } socialNetwork="twitter"/>
+    </div>
+</div>
+
+<style>
+    .social-netwoks-container {
+        min-width: 50%;
+    }
+
+    .cards-social-networks {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 1200px) {
+        .cards-social-networks {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, 100%);
+        }
+    }
+</style>

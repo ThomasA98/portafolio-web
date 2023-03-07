@@ -1,0 +1,35 @@
+---
+import SocialNetworks from "./SocialNetworks.astro";
+
+---
+
+<footer class="container">
+    <SocialNetworks />
+    <div>
+        <h3 class="title">How did I make this page?</h3>
+        <p>This page is develop in Astro and Solid JS. Astro for static HTML and Solid JS for dinamic components.</p>
+    </div>
+</footer>
+
+<style>
+    footer {
+        display: flex !important;
+        gap: 2rem;
+    }
+
+    footer > div {
+        display: inline-block;
+    }
+
+    .title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    @media (max-width: 800px) {
+        footer {
+            flex-wrap: nowrap;
+            flex-direction: column;
+        }
+    }
+</style>

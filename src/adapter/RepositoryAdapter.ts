@@ -4,6 +4,6 @@ export const repositoryAdapter = (repos: Array<Repository>) => {
     return repos.map(repo => ({
         ...repo,
         contents_url: repo.contents_url.replace('{+path}', 'README.md'),
-        language: `image-languages/${repo.language?.toLowerCase()}.svg`
+        language: `image/${repo.language?.toLowerCase()}.svg`
     }))
 };

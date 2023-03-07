@@ -12,9 +12,48 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{ title }</title>
+		<title>{ title } Page</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
+
+
+<style is:global >
+	* {
+		margin: 0;
+		padding: 0;
+		font-size: 15px;
+		/* font-family: 'Atkinson Hyperlegible'; */
+		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	}
+
+	body {
+		background-color: #131313;
+	}
+
+	a {
+		text-decoration: none;
+        color: #5ae1eb;
+	}
+
+	p {
+		font-size: 1rem;
+	}
+
+	.container {
+        display: block;
+        margin: 2rem;
+        color: white;
+        background-color: #222;
+        padding: 2rem;
+    }
+
+	@media (max-width: 800px) {
+		.container {
+			margin: 1rem;
+			padding: 1rem;
+		}
+	}
+</style>

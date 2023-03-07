@@ -1,0 +1,80 @@
+---
+import TechnologyItem from './TechnologyItem.astro'
+
+type Level = 1 | 2 | 3 | 4 | 5 | null
+
+interface Technology {
+    name: string
+    level: Level
+    href: string
+}
+
+interface Language {
+    name: string
+    level: Level
+    href: string
+    technologies: Array<Technology>
+}
+
+interface Props {
+    tableHeaders: Array<string>
+    tableContent: Array<Language>
+}
+
+const { tableHeaders, tableContent } = Astro.props;
+---
+
+<div class="container">
+    <div>
+        <h2 class="title">Que es esta tabla</h2>
+        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus aperiam aliquid dicta numquam.</p>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>{
+                    tableHeaders.map(i => <th>{ i }</th>)
+                }</tr>
+            </thead>
+            <tbody>{
+                tableContent.map(lang => <tr>
+                    <td><TechnologyItem {...lang} /></td>
+                    <td>{
+                        lang.technologies.map( tech =>
+                            <TechnologyItem {...tech} />
+                        )
+                    }</td>
+                </tr>)
+            }</tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+
+    th {
+        font-size: 1.5rem;
+    }
+
+    td {
+        border-bottom: 1px solid #a00ea0;
+    }
+
+    .title {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .table {
+        width: 100%;
+    }
+
+    .description {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .table thead {
+        background-color: #a00ea0;
+    }
+</style>

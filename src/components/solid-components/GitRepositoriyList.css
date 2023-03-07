@@ -3,9 +3,15 @@
     padding: 0;
 }
 
-.container {
-    columns: 4;
-    /* grid-template-columns: repeat(4, 1fr); */
-    /* gap: 2rem; */
+.container-repositories {
     margin: 2rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+}
+
+@media (max-width: 800px) {
+    .container-repositories {
+        margin: 1rem;
+    }
 }

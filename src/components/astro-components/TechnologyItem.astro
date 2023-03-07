@@ -1,0 +1,73 @@
+---
+interface Props {
+    name: string
+    level:  1 | 2 | 3 | 4 | 5 | null
+    href: string
+}
+
+const { name, level, href } = Astro.props;
+---
+
+<div class="item">
+    <a href={ href } target="_blank" >
+        <img
+        class="icon animation-vibrating"
+        src={ `/image/${ name.toLowerCase() }.svg` }
+        alt={ name } />
+    </a>
+    {level && <img class="icon" src={ `/image/level_${ level }.svg` } alt={`level_${ level }`}>}
+</div>
+
+<style>
+    .item {
+        display: inline-block;
+        width: 8rem;
+        margin: 1rem;
+    }
+
+    .icon {
+        width: 100%;
+    }
+
+    .animation-vibrating {
+        animation-name: vibrating;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+    }
+
+    @media (max-width: 800px) {
+        .item {
+            width: 3rem;
+        }
+    }
+
+    @keyframes vibrating {
+        0% {
+            transform: rotateY(0deg);
+        }
+        3% {
+            transform: rotateY(-20deg);
+        }
+        5% {
+            transform: rotateY(20deg);
+        }
+        10% {
+            transform: rotateY(-20deg);
+        }
+        15% {
+            transform: rotateY(10deg);
+        }
+        20% {
+            transform: rotateY(0deg);
+        }
+        100%{
+            transform: rotateY(0deg);
+        }
+    }
+</style>
+
+
+
+
+
+
