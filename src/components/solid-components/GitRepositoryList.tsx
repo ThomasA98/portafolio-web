@@ -24,17 +24,6 @@ export const GitRepositoryList = (props: Props) => {
           <For each={ getRepositories() } >
             {(repo) => <RepoCard {...repo} />}
           </For>
-        }
-        {
-          <For each={ getRepositories() } >
-            {(repo) => <RepoCard {...repo} />}
-          </For>
-        }
-        {
-          <For each={ getRepositories() } >
-            {(repo) => <RepoCard {...repo} />}
-          </For>
-        }
-        </section>
+        }</section>
     );
 };

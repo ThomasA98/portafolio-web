@@ -1,26 +1,30 @@
 ---
+import type { SocialNetwork } from "../../model/SocialNetwok";
 import AboutOwner from "./AboutOwner.astro";
 import SocialNetworks from "./SocialNetworks.astro";
 
 interface Props {
     name: string
+    aboutOwnerDescription: string
+    socialNetworks: SocialNetwork[]
 }
 
-const { name } = Astro.props;
+const { name, aboutOwnerDescription, socialNetworks } = Astro.props;
 ---
 
 <header class="container">
     <AboutOwner
         name={ name }
-        about={ 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, unde modi. Earum facilis, molestiae sed, laboriosam dolorem libero alias suscipit, eveniet in iusto quibusdam qui. Labore veniam aut illo corporis.' }
+        about={ aboutOwnerDescription }
     />
-    <SocialNetworks />
+    <SocialNetworks socialNetworks={ socialNetworks } />
 </header>
 
 <style>
     header {
         display: flex !important;
         gap: 2rem;
+        justify-content: space-between;
     }
 
     @media (max-width: 800px) {

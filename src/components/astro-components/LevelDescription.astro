@@ -10,7 +10,18 @@ const { levels } = Astro.props
 
 <div class="container" >
     <h3>¿Que significan las estrellas?</h3>
-    {
-        levels.map(level => <LevelDescriptionItem {...level} /> )
-    }
+    <div>
+        {
+            levels.map(level => <LevelDescriptionItem {...level} /> )
+        }
+    </div>
 </div>
+
+<style>
+    .container > div {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        width: 100%;
+    }
+</style>

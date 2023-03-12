@@ -1,13 +1,25 @@
 ---
+import type { SocialNetwork } from "../../model/SocialNetwok";
 import SocialCard from "./SocialCard.astro";
+
+interface Props {
+    socialNetworks: SocialNetwork[]
+}
+
+const { socialNetworks } = Astro.props;
 
 ---
 
 <div class="social-netwoks-container">
     <div class="cards-social-networks">
-        <SocialCard href={ 'https://www.google.com' } socialNetwork="github"/>
-        <SocialCard href={ 'https://www.google.com' } socialNetwork="linkedin"/>
-        <SocialCard href={ 'https://www.google.com' } socialNetwork="twitter"/>
+        {
+            socialNetworks.map(socialNetwork =>
+                <SocialCard
+                    href={ socialNetwork.href }
+                    socialNetwork={ socialNetwork.socialNetworkName }
+                />
+            )
+        }
     </div>
 </div>
 

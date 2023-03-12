@@ -1,80 +1,41 @@
 ---
-import Footer from "../components/astro-components/Footer.astro";
 import Header from "../components/astro-components/Header.astro";
 import LevelDescription from "../components/astro-components/LevelDescription.astro";
 import TableTechnologies from "../components/astro-components/TableTechnologies.astro";
 import Welcome from "../components/astro-components/Welcome.astro";
 import { GitRepositoryList } from "../components/solid-components/GitRepositoryList";
 import Layout from "../layout/Layout.astro";
+import Footer from "../components/astro-components/Footer.astro";
 
-const githubUser = 'Tamiel';
-const nameOwner = 'El Terrible Nombre Fake';
-
-const levels = [
-	{
-		level: 1,
-		levelDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, odit.'
-	},{
-		level: 2,
-		levelDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, odit.'
-	},{
-		level: 3,
-		levelDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, odit.'
-	},{
-		level: 4,
-		levelDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, odit.'
-	},{
-		level: 5,
-		levelDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, odit.'
-	}
-]
+import data from "../data/data";
 
 ---
 
-<Layout title={ nameOwner }>
-	<Welcome nameOwner={ nameOwner } />
-	<Header name={ nameOwner } />
+<Layout title={ data.nameOwner }>
+	<Welcome nameOwner={ data.nameOwner } />
+	<Header
+		name={ data.nameOwner }
+		aboutOwnerDescription={ data.aboutOwnerDescription }
+		socialNetworks={ data.socialNetworks }
+	/>
 	<main>
-
-		<LevelDescription  levels={ levels } />
+		<LevelDescription levels={ data.levels } />
 
 		<TableTechnologies
-			tableHeaders={ ['Language', 'Library and Framework'] }
-			tableContent={ [
-				{name: 'javascript', level: 4, href: '', technologies: [
-					{ name: 'astro', href: '', level: 2 },
-					{ name: 'react', href: '', level: 3 },
-					{ name: 'solid', href: '', level: 1 },
-					{ name: 'nodejs', href: '', level: 2 },
-					{ name: 'typescript', href: '', level: 3 }
-				]},
-				{name: 'css', href: '', level: 3, technologies: [ {name: 'bootstrap', href: '', level: 1} ]},
-				{name: 'rust', href: '', level: 3, technologies: [
-					{ name: 'yew', href: '', level: 1 },
-					{ name: 'gotham', href: '', level: 1 }
-				]},
-				{name: 'python', href: '', level: 3, technologies: []}
-			] }
+			tableTitle={ data.firstTableTitle }
+			tableDescription={ data.firstTableDescription }
+			tableHeaders={ data.firstTableHeaders }
+			tableContent={ data.firstTableContent }
 		/>
 
 		<TableTechnologies
+			tableTitle={ data.secondTableTitle }
+			tableDescription={ data.secondTableDescription }
 		{/* TODO: Generalizar componente */}
-			tableHeaders={ [ 'Categorie', ''] }
-			tableContent={ [
-				{ name: 'Other Technologies', href: '', technologies: [
-					{ name: 'Docker', href: '', level: 2 },
-					{ name: 'Markdown', href: '', level: 3 },
-					{ name: 'Git', href: '', level: 2 },
-					{ name: 'SQL', href: '', level: 2 },
-					{ name: 'MongoDB', href: '', level: 1 }
-				]},
-				{ name: 'Languages', href: '', technologies: [
-					{ name: 'Español', href: '', level: 5 },
-					{ name: 'English', href: '', level: 1 }
-				] }
-			] }
+			tableHeaders={ data.secondTableHeaders }
+			tableContent={ data.secondTableContent }
 		/>
-		<GitRepositoryList gitUser={ githubUser } client:load />
+		<GitRepositoryList gitUser={ data.githubUser } client:load />
 	</main>
-	<Footer />
+	<Footer socialNetworks={ data.socialNetworks } />
 </Layout>

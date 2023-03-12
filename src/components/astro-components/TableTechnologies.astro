@@ -1,33 +1,21 @@
 ---
+import type { Language } from '../../model/TableModel';
 import TechnologyItem from './TechnologyItem.astro'
 
-type Level = 1 | 2 | 3 | 4 | 5 | null
-
-interface Technology {
-    name: string
-    level: Level
-    href: string
-}
-
-interface Language {
-    name: string
-    level: Level
-    href: string
-    technologies: Array<Technology>
-}
-
 interface Props {
+    tableTitle: string
+    tableDescription: string
     tableHeaders: Array<string>
     tableContent: Array<Language>
 }
 
-const { tableHeaders, tableContent } = Astro.props;
+const { tableHeaders, tableContent, tableTitle, tableDescription } = Astro.props;
 ---
 
 <div class="container">
     <div>
-        <h2 class="title">Que es esta tabla</h2>
-        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus aperiam aliquid dicta numquam.</p>
+        <h2 class="title">{ tableTitle }</h2>
+        <p class="description">{ tableDescription }</p>
     </div>
     <div>
         <table class="table">

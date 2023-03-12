@@ -12,6 +12,7 @@ const { nameOwner } = Astro.props;
 
     if (sessionStorage.getItem('hiddenWelcome')) {
         if (welcomeDiv) {
+            welcomeDiv.style.transition = '0s';
             welcomeDiv.style.height = '0px';
             welcomeDiv.style.opacity = '0';
             welcomeDiv.style.zIndex = '-1';
@@ -30,10 +31,10 @@ const { nameOwner } = Astro.props;
 
 <div id="welcome">
     <div class="welcome-container">
-        <img src="/image/docker.svg" alt="welcome" />
-        <h2>Welcome</h2>
+        <img src="/image/owner.svg" alt="welcome" />
+        <h2>Bienvenido</h2>
     </div>
-    <p>Welcome to {nameOwner}</p>
+    <p>Bienvenido al portafolio de { nameOwner }</p>
     <button id="hiddenWelcomeButton">Go!!</button>
 </div>
 
@@ -51,6 +52,7 @@ const { nameOwner } = Astro.props;
         align-items: center;
         background-color: #222;
         z-index: 100;
+        transition: 500ms;
     }
 
     .welcome-container {

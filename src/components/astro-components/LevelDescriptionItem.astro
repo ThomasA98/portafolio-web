@@ -7,17 +7,22 @@ interface Props {
 const { level, levelDescription } = Astro.props
 ---
 
-<div>
+<div class="level-item">
     <img
 		class="icon"
 		src={ `/image/level_${ level }.svg` }
-		alt={`level_${ level }`}/>
-		<p>{ levelDescription }</p>
+		alt={`level_${ level }`}
+	/>
+	<p>{ levelDescription }</p>
 </div>
 
 
 <style>
 	.icon {
 		width: 10rem;
+	}
+
+	.level-item {
+		min-height: 120px;
 	}
 </style>

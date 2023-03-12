@@ -1,8 +1,10 @@
 ---
+import type { Level } from '../../model/TableModel';
+
 interface Props {
     name: string
-    level:  1 | 2 | 3 | 4 | 5 | null
-    href: string
+    level:  Level
+    href: string | null
 }
 
 const { name, level, href } = Astro.props;
@@ -10,10 +12,14 @@ const { name, level, href } = Astro.props;
 
 <div class="item">
     <a href={ href } target="_blank" >
-        <img
-        class="icon animation-vibrating"
-        src={ `/image/${ name.toLowerCase() }.svg` }
-        alt={ name } />
+        {href === ''
+            ? <p>{ name }</p>
+            : <img
+                class="icon animation-vibrating"
+                src={ `/image/${ name.toLowerCase() }.svg` }
+                alt={ name }
+            />
+        }
     </a>
     {level && <img class="icon" src={ `/image/level_${ level }.svg` } alt={`level_${ level }`}>}
 </div>

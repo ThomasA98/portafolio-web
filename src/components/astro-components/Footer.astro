@@ -1,29 +1,44 @@
 ---
+import type { SocialNetwork } from "../../model/SocialNetwok";
 import SocialNetworks from "./SocialNetworks.astro";
+
+interface Props {
+    socialNetworks: SocialNetwork[]
+}
+
+const { socialNetworks } = Astro.props;
 
 ---
 
 <footer class="container">
-    <SocialNetworks />
+    <SocialNetworks socialNetworks={ socialNetworks } />
     <div>
         <h3 class="title">How did I make this page?</h3>
         <p>This page is develop in Astro and Solid JS. Astro for static HTML and Solid JS for dinamic components.</p>
+        <h3 class="title">Repository</h3>
+        <p><a href="https://github.com/ThomasA98/portafolio-web" target="_blank">https://github.com/ThomasA98/portafolio-web</a></p>
     </div>
 </footer>
+<div class="container copy">© 2023 Thomas Andrés Koczan</div>
 
 <style>
     footer {
         display: flex !important;
         gap: 2rem;
-    }
-
-    footer > div {
-        display: inline-block;
+        justify-content: space-between;
     }
 
     .title {
         font-size: 3rem;
         margin-bottom: 1rem;
+    }
+
+    .copy {
+        text-align: center;
+        height: 25px;
+        padding: 0;
+        padding-top: 20px;
+        margin-top: -2rem;
     }
 
     @media (max-width: 800px) {
