@@ -35,7 +35,7 @@ import data from "../data/data";
 			tableHeaders={ data.secondTableHeaders }
 			tableContent={ data.secondTableContent }
 		/>
-		<GitRepositoryList gitUser={ data.githubUser } client:load />
+		<GitRepositoryList gitUser={ data.githubUser } client:only />
 	</main>
 	<Footer socialNetworks={ data.socialNetworks } />
 </Layout>
