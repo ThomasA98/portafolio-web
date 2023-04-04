@@ -15,13 +15,13 @@ const { name, level, href } = Astro.props;
         {href === ''
             ? <p>{ name }</p>
             : <img
-                class="icon animation-vibrating"
-                src={ `/portafolio-web/image/${ name.toLowerCase() }.svg` }
-                alt={ name }
+            class="icon animation-vibrating"
+            src={ `/portafolio-web/image/${ name.toLowerCase() }.svg` }
+            alt={ name }
             />
         }
     </a>
-    <img class="icon" src={ `/portafolio-web/image/level_${ level }.svg` } alt={`level_${ level }`}>
+    {level && <img class="icon" src={ `/portafolio-web/image/level_${ level }.svg` } alt={`level_${ level }`}/>}
 </div>
 
 <style>
