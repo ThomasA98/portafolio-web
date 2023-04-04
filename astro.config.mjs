@@ -5,5 +5,7 @@ import solidJs from "@astrojs/solid-js";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [solidJs()]
+  integrations: [solidJs()],
+  site: 'https://ThomasA98.github.io',
+  base: '/portafolio-web'
 });
