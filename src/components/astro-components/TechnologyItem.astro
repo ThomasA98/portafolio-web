@@ -16,12 +16,12 @@ const { name, level, href } = Astro.props;
             ? <p>{ name }</p>
             : <img
                 class="icon animation-vibrating"
-                src={ `https://ThomasA98.github.io/portafolio-web/image/${ name.toLowerCase() }.svg` }
+                src={ `/portafolio-web/image/${ name.toLowerCase() }.svg` }
                 alt={ name }
             />
         }
     </a>
-    {level && <img class="icon" src={ `https://ThomasA98.github.io/portafolio-web/image/level_${ level }.svg` } alt={`level_${ level }`}>}
+    <img class="icon" src={ `/portafolio-web/image/level_${ level }.svg` } alt={`level_${ level }`}>
 </div>
 
 <style>
