@@ -8,7 +8,7 @@ const { socialNetwork, href } = Astro.props
 ---
 
 <div class="social-card">
-    <img class="social-card-img" src="/image/javascript.svg" alt="">
+    <img class="social-card-img" src="https://ThomasA98.github.io/portafolio-web/image/T.svg" alt="">
     <a class="social-card-link" href={ href } target="_blank" >{ socialNetwork }</a>
 </div>
 
@@ -16,6 +16,7 @@ const { socialNetwork, href } = Astro.props
     .social-card {
         display: flex;
         align-items: center;
+        justify-content: space-around;
         height: 100px;
         border-radius: 5px;
         padding: 1rem;
@@ -23,11 +24,10 @@ const { socialNetwork, href } = Astro.props
     }
 
     .social-card-img {
-        width: 90px;
+        width: 80px;
     }
 
     .social-card-link {
-        margin: 0 auto;
         font-size: 2.5rem;
         text-transform: capitalize;
     }

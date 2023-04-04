@@ -8,7 +8,7 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"deploy": "gh-pages -d dist"
+		"_deploy": "gh-pages -d dist -r git@github.com:ThomasA98/portafolio-web.git"
 	},
 	"dependencies": {
 		"@astrojs/solid-js": "^2.0.2",
