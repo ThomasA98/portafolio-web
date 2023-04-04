@@ -67,7 +67,7 @@ const firstTableContent: Language[] = [
 ];
 
 // datos de la segunda tabla
-const secondTableTitle = 'Otras tecnologías';
+const secondTableTitle = 'Otros temas';
 
 const secondTableDescription = '';
 

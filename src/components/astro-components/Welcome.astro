@@ -31,7 +31,7 @@ const { nameOwner } = Astro.props;
 
 <div id="welcome">
     <div class="welcome-container">
-        <img src="/image/owner.svg" alt="welcome" />
+        <img src="/image/T.svg" alt="welcome" />
         <h2>Bienvenido</h2>
     </div>
     <p>Bienvenido al portafolio de { nameOwner }</p>
@@ -58,12 +58,13 @@ const { nameOwner } = Astro.props;
     .welcome-container {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
         width: 33%;
     }
 
     #welcome img {
-        width: 200px;
+        width: 12rem;
+        margin-top: -2rem;
     }
 
     #welcome h2 {
