@@ -8,7 +8,7 @@ const githubUser = 'ThomasA98';
 const nameOwner = 'Thomas Andrés Koczan';
 
 // acerca del dueño del repositorio
-const aboutOwnerDescription = 'Soy un estudiante de programación y actualmente me estoy centrando en desarrollo web Frontend. Me gusta estudiar cosas nuevas y experimentar. Puedes contactarme por mi email andres.koczan@gmail.com o por mis redes sociales acá a la derecha. Muchas gracias por leer.';
+const aboutOwnerDescription = 'Desarrollador frontend con Nextjs, manejo de React con typescript y backend con express. Conocimiento en librerías relacionadas a React como tanstack-query (en su forma especifica de React), style-components, y manejadores de estado como zustand y redux. Entre otras tecnologías como Docker y T3stack.';
 
 // redes sociales del dueño del repositorio
 const socialNetworks: SocialNetwork[] = [
@@ -21,6 +21,9 @@ const socialNetworks: SocialNetwork[] = [
     },{
         href: 'https://www.linkedin.com/in/thomas-andres-koczan-orellana-7a4968269/',
         socialNetworkName: 'linkedin'
+    },{
+        href: 'https://www.getonbrd.com/p/thomas-andres-koczan-orellana',
+        socialNetworkName: 'getonboard'
     }
 ];
 
@@ -60,10 +63,6 @@ const firstTableContent: Language[] = [
         { name: 'typescript', href: 'https://www.typescriptlang.org', level: 3 }
     ]},
     {name: 'css', href: 'https://developer.mozilla.org/es/docs/Web/CSS', level: 3, technologies: []},
-    {name: 'rust', href: 'https://www.rust-lang.org/es', level: 3, technologies: [
-        { name: 'yew', href: 'https://yew.rs', level: 1 },
-        { name: 'gotham', href: 'https://gotham.rs', level: 1 }
-    ]}
 ];
 
 // datos de la segunda tabla
